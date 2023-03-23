@@ -17,6 +17,6 @@ export class User {
   @Column({ default: false })
   isAdmin: boolean;
 
-  @OneToMany(() => Link, (link) => User.links, {cascade: ['insert', 'update'] })
-  information: Relation<Link>[];
+  @OneToMany(() => Link, (link) => links.user, {cascade: ['insert', 'update'] })
+  links: Relation<Link>[];
 }

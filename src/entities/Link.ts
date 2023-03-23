@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column, Relation, OneToMany } from 'typeorm';
 
 @Entity()
 export class Link {
-  @PrimaryColumn('uuid')
+  @PrimaryColumn()
   linkID: string;
 
   @Column()
@@ -15,5 +15,5 @@ export class Link {
   numHits: number;
 
   @OneToMany(() => User, (user) => user.links, {cascade: ['insert', 'update'] })
-  information: Relation<User>;
+  user: Relation<User>;
 }
